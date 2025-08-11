@@ -2,6 +2,12 @@ package basics.datatypes;
 
 public class PrimitiveDataTypes {
     public static void main(String[] args) {
+        //declare a variable
+        int number;
+
+        //initialize a variable
+        number = 14;
+
         //the  byte data type can store a whole number between -128 and 127
         byte age = 25;
 
