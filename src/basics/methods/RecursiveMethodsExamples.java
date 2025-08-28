@@ -30,6 +30,18 @@ public class RecursiveMethodsExamples {
         int number = 1;
         System.out.println("without method list = "+list);
         System.out.println("with recursive removeAllFromListRecursive(list,"+number+"): "+ removeAllFromListRecursive(list,1));
+
+        List<String> listA = new ArrayList<>();
+        listA.add("1");
+        listA.add("2");
+        listA.add("3");
+        List<String> listB = new ArrayList<>();
+        listB.add("A");
+        listB.add("B");
+        listB.add("C");
+
+        System.out.println(matchLists(listA,listB));
+
     }
 
     //list From '0' to 'n'
@@ -66,25 +78,48 @@ public class RecursiveMethodsExamples {
 
 
     //remove all the same numbers from a list when it's specified
-    public static List<Integer> removeAllFromListRecursive(List<Integer> lista, int number){
+    public static List<Integer> removeAllFromListRecursive(List<Integer> list, int number){
 
-        if(lista.toArray().length == 0){
+        if(list.toArray().length == 0){
             return new ArrayList<>();
         }else{
 
-            if(lista.toArray()[0].equals(number)){
-                lista.removeFirst();
-                return removeAllFromListRecursive(lista,number);
+            if(list.toArray()[0].equals(number)){
+                list.removeFirst();
+                return removeAllFromListRecursive(list,number);
             }else{
-                int value = (int)lista.toArray()[0];
-                lista.removeFirst();
-                List<Integer> output = removeAllFromListRecursive(lista,number);
+                int value = (int)list.toArray()[0];
+                list.removeFirst();
+                List<Integer> output = removeAllFromListRecursive(list,number);
                 output.addFirst(value);
                 return output;
             }
         }
 
     }
+
+    //matching two lists
+
+    public static List<String> matchLists(List<String> firstList, List<String> secondList){
+
+        if( firstList.toArray().length == 0 || secondList.toArray().length == 0){
+            return new ArrayList<>();
+        }else{
+
+            String value1 = firstList.getFirst();
+            String value2 = secondList.getFirst();
+            firstList.removeFirst();
+            secondList.removeFirst();
+            List<String> output = matchLists(firstList,secondList);
+            output.addFirst(value1+value2);
+
+            return output;
+
+        }
+
+    }
+
+
 
 
 }
