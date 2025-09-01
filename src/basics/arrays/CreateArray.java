@@ -1,7 +1,7 @@
 package basics.arrays;
 import java.util.Arrays;
 
-
+    //initializing arrays
 public class CreateArray {
     public static void main(String[] args) {
         int [] integers = new int[5];
