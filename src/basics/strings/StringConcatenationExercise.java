@@ -5,6 +5,7 @@ public class StringConcatenationExercise {
     public static void main(String[] args) {
         String concatenatedString = concatenateStrings("Hello","World");
         System.out.println(concatenatedString);
+
     }
 
     public static String concatenateStrings(String part1, String part2) {
