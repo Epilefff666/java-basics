@@ -1,4 +1,4 @@
-package oop.objects.constructors.example1;
+package oop.objects.constructors;
 
 public class Car {
     private String make;
